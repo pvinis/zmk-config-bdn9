@@ -34,7 +34,7 @@
 			bindings = <
 				______      ______ ______
 				&bootloader &reset ______
-				______      ______ ______
+				______      &kp C_MUTE ______
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp K_VOL_UP K_VOL_DN>;
 		};
