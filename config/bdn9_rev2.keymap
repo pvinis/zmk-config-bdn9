@@ -1,23 +1,13 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-/* Uncomment and keep whatever encoders are on your BDN9
 &sensors {
 	status = "okay";
-	sensors = <&left_encoder &mid_encoder &right_encoder>;
+	sensors = <&left_encoder &right_encoder>;
 };
-*/
 
-// Uncomment each encoder installed on your BDN9
-// &left_encoder { status = "okay"; };
-// &mid_encoder { status = "okay"; };
-// &right_encoder { status = "okay"; };
+&left_encoder { status = "okay"; };
+&right_encoder { status = "okay"; };
 
 / {
 	keymap {
@@ -25,13 +15,11 @@
 
 		default_layer {
 			bindings = <
-				&kp HOME  &kp K_PP &kp END
-				&kp PG_UP &kp UP   &kp PG_DN
-				&kp LEFT  &kp DOWN &kp RIGHT
+				&kp HOME    &kp K_MUTE       &kp &none
+				&kp PG_UP   &kp UP           &kp PG_DN
+				&kp K_PREV  &kp K_PLAY_PAUSE &kp K_NEXT
 			>;
-			/* Uncomment and add necessary bindings. This examples is for one encoder
-			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
-			*/
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp K_VOL_UP K_VOL_DN>;
 		};
 	};
 };
