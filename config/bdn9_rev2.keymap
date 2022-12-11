@@ -39,7 +39,7 @@
 				&mo SPOTIFY  &kp HYPER(N7)     &mo SYSCTL
 				&kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 
 		SPOTIFY_layer {
@@ -51,7 +51,8 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
 		};
 
-// TODO: seems like reset doesnt work. tried &bootloader and &reset. according to discord, https://ptb.discord.com/channels/719497620560543766/719909884769992755/1051289399373082745, its not implemented yet for stm32.
+		// TODO: add a flash button
+		// seems like reset doesnt work. tried &bootloader and &reset. according to discord, https://ptb.discord.com/channels/719497620560543766/719909884769992755/1051289399373082745, its not implemented yet for stm32.
 		SYSCTL_layer {
 			bindings = <
 				______    ______      ______
@@ -62,3 +63,8 @@
 		};
 	};
 };
+
+
+// TODO: make underglow work
+// CONFIG_ZMK_RGB_UNDERGLOW makes it light up, but i want to make it so that it only lights up after a key tap and turn off again.
+// i tried &kp RGB_ON &kp RGB_OFF &kp RGB_EFF but didnt work.
