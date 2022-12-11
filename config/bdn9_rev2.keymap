@@ -28,6 +28,7 @@
 #define PV_NT_TOD  HYPER(N7)
 #define PV_RORO    HYPER(N8)
 #define PV_SCRSVR  HYPER(N9)
+#define PV_SLEEP   LA(LG(C_POWER))
 
 
 / {
@@ -66,9 +67,9 @@
 		// seems like reset doesnt work. tried &bootloader and &reset. according to discord, https://ptb.discord.com/channels/719497620560543766/719909884769992755/1051289399373082745, its not implemented yet for stm32.
 		SYSCTL_layer {
 			bindings = <
-				______    &kp C_SLEEP_MODE  ______
-				&pv_name  &reset            ______
-				______    &kp PV_SCRSVR     &kp PV_RORO
+				______    &kp PV_SLEEP   ______
+				&pv_name  &reset         ______
+				______    &kp PV_SCRSVR  &kp PV_RORO
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
