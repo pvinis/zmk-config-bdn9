@@ -35,16 +35,16 @@
 
 		BASE_layer {
 			bindings = <
-				&kp HOME    &kp C_MUTE        &none
-				&none       &none             &mo SYSCTL
-				&kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT
+				&kp HOME     &kp C_MUTE        &none
+				&mo SPOTIFY  &kp HYPER(N7)     &mo SYSCTL
+				&kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
 		};
 
 		SPOTIFY_layer {
 			bindings = <
-				______        ______          ______
+				______        &kp HYPER(N4)   ______
 				______        ______          ______
 				&kp HYPER(N3)  &kp HYPER(N1)  &kp HYPER(N2)
 			>;
@@ -56,7 +56,7 @@
 			bindings = <
 				______    ______      ______
 				&pv_name  &reset      ______
-				______    &kp C_MUTE  ______
+				______    &kp C_MUTE  &kp HYPER(N8)
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
 		};
