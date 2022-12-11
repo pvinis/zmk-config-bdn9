@@ -39,7 +39,7 @@
 				&mo SPOTIFY  &kp HYPER(N7)     &mo SYSCTL
 				&kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N5) HYPER(N6)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
 		};
 
 		SPOTIFY_layer {
@@ -48,7 +48,7 @@
 				______         ______         ______
 				&kp HYPER(N3)  &kp HYPER(N1)  &kp HYPER(N2)
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
 		};
 
 		// TODO: add a flash button
@@ -59,7 +59,7 @@
 				&pv_name  &reset      ______
 				______    &kp C_MUTE  &kp HYPER(N8)
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
 		};
 	};
 };
