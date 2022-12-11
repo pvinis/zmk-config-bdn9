@@ -39,7 +39,7 @@
 				&mo SPOTIFY  &kp HYPER(N7)     &mo SYSCTL
 				&kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N5) HYPER(N6)>;
 		};
 
 		SPOTIFY_layer {
