@@ -18,6 +18,15 @@
 
 
 / {
+	macros {
+		ZMK_MACRO(
+			pv_name,
+			bindings = <&kp B &kp D &kp N &kp N9 &kp UNDERSCORE &kp R &kp E &kp V &kp N2>;
+			wait-ms = <30>;
+			tap-ms = <30>;
+		)
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -30,11 +39,12 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp K_VOL_UP K_VOL_DN>;
 		};
 
+// TODO: seems like reset doesnt work. tried &bootloader and &reset
 		SYSCTL_layer {
 			bindings = <
 				______      ______ ______
-				&bootloader &reset ______
-				______      &kp C_MUTE ______
+				&pv_name &reset ______
+				&bootloader      &kp C_MUTE ______
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp K_VOL_UP K_VOL_DN>;
 		};
