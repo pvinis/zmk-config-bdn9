@@ -19,6 +19,7 @@
 
 / {
 	macros {
+		// TODO: at some point, make this into a macro with something like SEND_STRING from qmk. apparently this doesnt exist yet in zmk.
 		ZMK_MACRO(
 			pv_name,
 			bindings = <&kp B &kp D &kp N &kp N9 &kp UNDERSCORE &kp R &kp E &kp V &kp N2>;
