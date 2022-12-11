@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define ______ &trans
-#define HYPER(key) LSHIFT(LCTRL(LALT(LGUI(key))))
+#define HYPER(key) LS(LC(LA(LG(key))))
 
 &sensors {
 	status = "okay";
@@ -44,8 +44,8 @@
 
 		SPOTIFY_layer {
 			bindings = <
-				______        &kp HYPER(N4)   ______
-				______        ______          ______
+				______         &kp HYPER(N4)  ______
+				______         ______         ______
 				&kp HYPER(N3)  &kp HYPER(N1)  &kp HYPER(N2)
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HYPER(N5) HYPER(N6)>;
