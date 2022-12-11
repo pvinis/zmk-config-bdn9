@@ -19,6 +19,17 @@
 #define SYSCTL  2
 
 
+#define PV_SP_PLAYPAUSE HYPER(N1)
+#define PV_SP_NEXT HYPER(N2)
+#define PV_SP_PREV HYPER(N3)
+#define PV_SP_MUTE HYPER(N4)
+#define PV_SP_VOLD HYPER(N5)
+#define PV_SP_VOLU HYPER(N6)
+#define PV_NT_TOD  HYPER(N7)
+#define PV_RORO    HYPER(N8)
+#define PV_SCRSVR  HYPER(N9)
+
+
 / {
 	macros {
 		// TODO: at some point, make this into a macro with something like SEND_STRING from qmk. apparently this doesnt exist yet in zmk.
@@ -36,30 +47,30 @@
 		BASE_layer {
 			bindings = <
 				&kp HOME     &kp C_MUTE        &none
-				&mo SPOTIFY  &kp HYPER(N7)     &mo SYSCTL
+				&mo SPOTIFY  &kp PV_NT_TOD     &mo SYSCTL
 				&kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
 
 		SPOTIFY_layer {
 			bindings = <
-				______         &kp HYPER(N4)  ______
-				______         ______         ______
-				&kp HYPER(N3)  &kp HYPER(N1)  &kp HYPER(N2)
+				______          &kp PV_SP_MUTE       ______
+				______          ______               ______
+				&kp PV_SP_PREV  &kp PV_SP_PLAYPAUSE  &kp PV_SP_NEXT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
 
 		// TODO: add a flash button
 		// seems like reset doesnt work. tried &bootloader and &reset. according to discord, https://ptb.discord.com/channels/719497620560543766/719909884769992755/1051289399373082745, its not implemented yet for stm32.
 		SYSCTL_layer {
 			bindings = <
-				______    ______      ______
-				&pv_name  &reset      ______
-				______    &kp C_MUTE  &kp HYPER(N8)
+				______    &kp C_SLEEP_MODE  ______
+				&pv_name  &reset            ______
+				______    &kp PV_SCRSVR     &kp PV_RORO
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp HYPER(N6) HYPER(N5)>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
 	};
 };
