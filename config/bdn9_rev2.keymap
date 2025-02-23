@@ -68,7 +68,7 @@
 		SYSCTL_layer {
 			bindings = <
 				______    &kp PV_SLEEP   ______
-				&pv_name  &reset         ______
+				&pv_name  &sys_reset     ______
 				______    &kp PV_SCRSVR  &kp PV_RORO
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
