@@ -63,13 +63,11 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
 
-		// TODO: add a flash button
-		// seems like reset doesnt work. tried &bootloader and &reset. according to discord, https://ptb.discord.com/channels/719497620560543766/719909884769992755/1051289399373082745, its not implemented yet for stm32.
 		SYSCTL_layer {
 			bindings = <
-				______    &kp PV_SLEEP   ______
-				&pv_name  &sys_reset     ______
-				______    &kp PV_SCRSVR  &kp PV_RORO
+				&bootloader  &kp PV_SLEEP   ______
+				&pv_name     ______         ______
+				______       &kp PV_SCRSVR  &kp PV_RORO
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
