@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>pvinis/renovate-config#v1"
+    "local>pvinis/renovate-config"
   ]
 }
