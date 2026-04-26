@@ -1,3 +1,5 @@
+# ⚠️ Use https://github.com/pvinis/zmk-configg ⚠️
+
 # Pavlos' ZMK Config
 
 ### Setup
